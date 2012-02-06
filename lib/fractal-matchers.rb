@@ -1,2 +1,4 @@
 require "fractal-matchers/version"
-require "fractal-matchers/rspec_matchers"
+if defined?(RSpec)
+  require "fractal-matchers/rspec_matchers"
+end
