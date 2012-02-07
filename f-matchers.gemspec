@@ -1,17 +1,17 @@
 # -*- encoding: utf-8 -*-
 $:.push File.expand_path("../lib", __FILE__)
-require "fractal-matchers/version"
+require "f-matchers/version"
 
 Gem::Specification.new do |s|
-  s.name        = "fractal-matchers"
-  s.version     = Fractal::Matchers::VERSION
+  s.name        = "f-matchers"
+  s.version     = FMatchers::VERSION
   s.authors     = ["Andrea Campolonghi"]
   s.email       = ["acampolonghi@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{Rspec matchers from fractalgarden.com}
-  s.description = %q{Rspec matchers used in fractalgarden.com}
+  s.summary     = %q{Rspec matchers}
+  s.description = %q{Rspec matchers}
 
-  s.rubyforge_project = "fractal-matchers"
+  s.rubyforge_project = "f-matchers"
 
   s.files         = `git ls-files`.split("\n")
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")

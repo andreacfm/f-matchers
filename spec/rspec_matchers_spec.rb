@@ -1,7 +1,7 @@
 require "spec_helper"
-require "support/rspec_fractal_matchers"
+require "support/rspec_f_matchers"
 
-describe "rspec_fractal_matchers" do
+describe "rspec_f_matchers" do
     
   context "accept_nested_attributes_for" do
     
