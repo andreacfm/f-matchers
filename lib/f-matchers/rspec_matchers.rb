@@ -20,3 +20,16 @@ RSpec::Matchers.define :protect_attribute do |attribute|
     "#{subject.class} should not protect attribute #{attribute.inspect}"
   end
 end
+
+# spec for prepend_view_path
+RSpec::Matchers.define :prepend_view_path_with do |attribute|
+  match do |model|
+    model.send(:view_paths).first == attribute
+  end
+  failure_message_for_should do
+    "#{subject} should prepend view path with #{attribute}"
+  end
+  failure_message_for_should_not do
+    "#{subject} should not prepend view path with #{attribute}"
+  end
+end

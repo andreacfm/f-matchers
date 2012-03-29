@@ -1,17 +1,27 @@
 require "spec_helper"
 
 describe "rspec_f_matchers" do
-  
-  subject{Document}
-    
-  context "accept_nested_attributes_for" do   
+
+  context "accept_nested_attributes_for" do
+    subject { Document }
     it { should accept_nested_attributes_for(:section) }
     it { should_not accept_nested_attributes_for(:users) }
-  end  
+  end
 
-  context "protect_attribute" do  
+  context "protect_attribute" do
+    subject { Document }
     it { should protect_attribute(:protect_me) }
     it { should_not protect_attribute(:do_not_protect_me) }
-  end  
-    
+  end
+
+  context "prepend_view_path_with" do
+    before do
+      @receiver = Object.new
+      @receiver.stub(:view_paths){ ['path_1'] }
+    end
+    subject{ @receiver }
+    it { should prepend_view_path_with('path_1') }
+    it { should_not prepend_view_path_with('path_2') }
+  end
+
 end  
