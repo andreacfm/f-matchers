@@ -1,4 +1,5 @@
 require "spec_helper"
+require "ostruct"
 
 describe "rspec_f_matchers" do
 
@@ -17,7 +18,7 @@ describe "rspec_f_matchers" do
   context "prepend_view_path_with" do
     before do
       @receiver = Object.new
-      @receiver.stub(:view_paths){ ['path_1'] }
+      @receiver.stub(:view_paths){ OpenStruct.new paths: ['path_1'] }
     end
     subject{ @receiver }
     it { should prepend_view_path_with('path_1') }

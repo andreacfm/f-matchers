@@ -24,7 +24,7 @@ end
 # spec for prepend_view_path
 RSpec::Matchers.define :prepend_view_path_with do |attribute|
   match do |model|
-    model.send(:view_paths).first == attribute
+    model.send(:view_paths).paths.first == attribute
   end
   failure_message_for_should do
     "#{subject} should prepend view path with #{attribute}"
