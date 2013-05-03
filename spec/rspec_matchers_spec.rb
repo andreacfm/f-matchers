@@ -25,4 +25,9 @@ describe "rspec_f_matchers" do
     it { should_not prepend_view_path_with('path_2') }
   end
 
-end  
+  context "tokenizable" do
+    specify { Section.new.should be_tokenizable }
+    specify { Document.new.should_not be_tokenizable }
+  end
+
+end

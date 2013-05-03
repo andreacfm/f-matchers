@@ -8,8 +8,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Andrea Campolonghi"]
   s.email       = ["acampolonghi@gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{Rspec matchers}
-  s.description = %q{Rspec matchers}
+  s.summary     = %q{Rspec matchers to be shared and reused}
+  s.description = %q{Rspec matchers to be shared and reused}
 
   s.rubyforge_project = "f-matchers"
 
@@ -21,4 +21,5 @@ Gem::Specification.new do |s|
   # specify any dependencies here; for example:
   s.add_runtime_dependency "rspec"
   s.add_development_dependency "activerecord"
+  s.add_development_dependency "sqlite3"
 end

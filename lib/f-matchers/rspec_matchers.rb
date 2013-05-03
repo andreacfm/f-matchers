@@ -1,7 +1,7 @@
 # return true is the model accept nested attributes for the passed attribute
 RSpec::Matchers.define :accept_nested_attributes_for do |attribute|
   match do |model|
-    klazz = model.respond_to?(:new) ? model : model.class 
+    klazz = model.respond_to?(:new) ? model : model.class
     klazz.nested_attributes_options.include? attribute
   end
 end
@@ -9,7 +9,7 @@ end
 # spec for attr_protected declarations
 RSpec::Matchers.define :protect_attribute do |attribute|
   match do |model|
-    klazz = model.respond_to?(:new) ? model : model.class 
+    klazz = model.respond_to?(:new) ? model : model.class
     protected = klazz.protected_attributes
     protected.include? attribute if protected
   end
@@ -33,3 +33,11 @@ RSpec::Matchers.define :prepend_view_path_with do |attribute|
     "#{subject} should not prepend view path with #{attribute}"
   end
 end
+
+# Return true is the model is usign the 'tokens' or respond to :tokens
+RSpec::Matchers.define :be_tokenizable do |attribute|
+  match do |klazz|
+    klazz.respond_to?(:tokens)
+  end
+end
+
